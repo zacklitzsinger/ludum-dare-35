@@ -2,19 +2,18 @@
 
 namespace Shapeshift
 {
-    class Villager : GameObject
+    class Tree : GameObject
     {
-        Sprite sprite;
+        Sprite sprite = new Sprite("Person", 16, 48);
         Point delta;
         int acceleration = 1;
         int maxXSpeed = 4;
         int maxYSpeed = 4;
         CollisionData lastCollisions;
 
-        public Villager(Point pos) : base()
+        public Tree(Point pos) : base()
         {
-            this.sprite = new Sprite("Janet", 32, 64);
-            this.aabb = new Rectangle(pos.X, pos.Y, 32, 32);
+            this.aabb = new Rectangle(pos.X, pos.Y, 16, 16);
         }
 
         public override void LoadContent()

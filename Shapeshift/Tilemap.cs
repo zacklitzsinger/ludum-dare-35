@@ -14,6 +14,12 @@ namespace Shapeshift
     {
         public int index;
         public bool solid;
+
+        public Tile(int index = 0, bool solid = false)
+        {
+            this.index = index;
+            this.solid = solid;
+        }
     }
 
     class Tilemap

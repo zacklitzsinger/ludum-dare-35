@@ -44,6 +44,10 @@
     <Compile Include="GameObjectManager.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Physics.cs" />
+    <Compile Include="Rock.cs" />
+    <Compile Include="Wood.cs" />
+    <Compile Include="Tree.cs" />
+    <Compile Include="UserInterface.cs" />
     <Compile Include="Villager.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />

@@ -33,7 +33,8 @@ namespace Shapeshift
         #region Draw methods
         public void Text(string s, Vector2 position)
         {
-            SpriteBatch.DrawString(Font, s, position, Color.White);
+            Vector2 size = Font.MeasureString(s);
+            SpriteBatch.DrawString(Font, s, position - size/4, Color.Black, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
         }
 
         public void Draw(Texture2D image, Vector2 position, Rectangle? sourceRect, Color c)

@@ -35,12 +35,14 @@ namespace Shapeshift
             Renderer.Instance.SpriteBatch = spriteBatch;
             Renderer.Instance.Graphics = GraphicsDevice;
             Renderer.Instance.Content = Content;
+            Renderer.Instance.Font = Content.Load<SpriteFont>("TextFont");
 
             var player = new Player();
             player.Manage();
             var v = new Villager(new Point(100, 100));
             v.Manage();
             tilemap.LoadContent();
+            UserInterface.Instance.LoadContent();
 
         }
 
@@ -51,6 +53,7 @@ namespace Shapeshift
         protected override void Update(GameTime gameTime)
         {
             Input.Instance.Update();
+            UserInterface.Instance.Update();
 
             base.Update(gameTime);
             GameObjectManager.Instance.Update(gameTime);
@@ -65,6 +68,7 @@ namespace Shapeshift
             tilemap.Draw();
 
             GameObjectManager.Instance.Draw();
+            UserInterface.Instance.Draw();
 
             spriteBatch.End();
 

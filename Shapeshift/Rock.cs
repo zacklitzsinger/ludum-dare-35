@@ -2,18 +2,17 @@
 
 namespace Shapeshift
 {
-    class Villager : GameObject
+    class Rock : GameObject
     {
-        Sprite sprite;
+        Sprite sprite = new Sprite("Rock", 32, 32);
         Point delta;
         int acceleration = 1;
         int maxXSpeed = 4;
         int maxYSpeed = 4;
         CollisionData lastCollisions;
 
-        public Villager(Point pos) : base()
+        public Rock(Point pos) : base()
         {
-            this.sprite = new Sprite("Janet", 32, 64);
             this.aabb = new Rectangle(pos.X, pos.Y, 32, 32);
         }
 
@@ -28,7 +27,7 @@ namespace Shapeshift
 
         public override void Draw()
         {
-            sprite.Draw(new Vector2(aabb.Left, aabb.Top - 32));
+            sprite.Draw(new Vector2(aabb.Left, aabb.Top));
         }
     }
 }

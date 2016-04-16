@@ -35,7 +35,7 @@
  "meta": {
   "app": "http://www.aseprite.org/",
   "version": "1.1.4.1",
-  "image": "C:\\Users\\Carson\\ludum-dare-35\\Shapeshift\\Content\\Jimbo.png",
+  "image": "C:\\Users\\zelit\\Documents\\Visual Studio 2015\\Projects\\Shapeshift\\Shapeshift\\Content\\Jimbo.png",
   "format": "RGBA8888",
   "size": { "w": 128, "h": 64 },
   "scale": "1",

@@ -4,7 +4,7 @@ namespace Shapeshift
 {
     class Player : GameObject
     {
-        Sprite sprite = new Sprite("Person", 16, 48);
+        Sprite sprite = new Sprite("Jimbo", 32, 64);
         Point delta;
         int acceleration = 1;
         int maxXSpeed = 4;
@@ -13,7 +13,13 @@ namespace Shapeshift
 
         public Player() : base()
         {
-            this.aabb = new Rectangle(0, 0, 16, 16);
+            this.aabb = new Rectangle(0, 0, 32, 32);
+            CreateUserInterface();
+        }
+
+        void CreateUserInterface()
+        {
+            UserInterface.Instance.AddButton(new Button(new Rectangle(32, 8, 128, 32), "Wall"));
         }
 
         public override void LoadContent()
@@ -63,7 +69,7 @@ namespace Shapeshift
 
             // Building
             if (Input.Instance.MouseDown())
-                BuildObject(Input.Instance.MousePosition);
+                BuildObject(Input.Instance.MousePosition, 1);
 
             // Limit speed
             delta.X = MathHelper.Clamp(delta.X, -maxXSpeed, maxXSpeed);
@@ -83,10 +89,10 @@ namespace Shapeshift
             lastCollisions = cd;
         }
 
-
-        public void BuildObject(Point screenPos)
+        public void BuildObject(Point screenPos, int index)
         {
-            Physics.Instance.tilemap.SetTile(Physics.Instance.tilemap.GetTilePoint(screenPos), new Tile() { index = 1, solid = true });
+            Tile t = new Tile(index, true);
+            Physics.Instance.tilemap.SetTile(Physics.Instance.tilemap.GetTilePoint(screenPos), t);
         }
 
         public override void Draw()
