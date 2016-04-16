@@ -1,0 +1,52 @@
+{ "frames": {
+   "Timbo 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 32, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 64 },
+    "sourceSize": { "w": 32, "h": 64 },
+    "duration": 100
+   },
+   "Timbo 1.ase": {
+    "frame": { "x": 32, "y": 0, "w": 32, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 64 },
+    "sourceSize": { "w": 32, "h": 64 },
+    "duration": 100
+   },
+   "Timbo 2.ase": {
+    "frame": { "x": 64, "y": 0, "w": 32, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 64 },
+    "sourceSize": { "w": 32, "h": 64 },
+    "duration": 100
+   },
+   "Timbo 3.ase": {
+    "frame": { "x": 96, "y": 0, "w": 32, "h": 64 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 32, "h": 64 },
+    "sourceSize": { "w": 32, "h": 64 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.1.4.1",
+  "image": "C:\\Users\\Carson\\ludum-dare-35\\Shapeshift\\Content\\Timbo.png",
+  "format": "RGBA8888",
+  "size": { "w": 128, "h": 64 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "WalkingDown", "from": 0, "to": 0, "direction": "forward" },
+   { "name": "walkingRight", "from": 1, "to": 1, "direction": "forward" },
+   { "name": "walkingUp", "from": 2, "to": 2, "direction": "forward" },
+   { "name": "WalkingLeft", "from": 3, "to": 3, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Front", "opacity": 255, "blendMode": "normal" }
+  ]
+ }
+}
