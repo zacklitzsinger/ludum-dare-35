@@ -7,7 +7,6 @@ namespace Shapeshift
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Player player;
         Tilemap tilemap;
 
         public Game1()
@@ -37,8 +36,10 @@ namespace Shapeshift
             Renderer.Instance.Graphics = GraphicsDevice;
             Renderer.Instance.Content = Content;
 
-            player = new Player();
+            var player = new Player();
             player.Manage();
+            var v = new Villager(new Point(100, 100));
+            v.Manage();
             tilemap.LoadContent();
 
         }

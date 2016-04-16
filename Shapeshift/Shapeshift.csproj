@@ -44,6 +44,7 @@
     <Compile Include="GameObjectManager.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Physics.cs" />
+    <Compile Include="Villager.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
