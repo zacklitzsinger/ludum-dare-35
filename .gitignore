@@ -1,3 +1,6 @@
 .vs/*
+Shapeshift/Content/bin/*
+Shapeshift/Content/obj/*
 Shapeshift/bin/*
 Shapeshift/obj/*
+packages/*

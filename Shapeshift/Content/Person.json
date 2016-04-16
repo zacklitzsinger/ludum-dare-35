@@ -1,0 +1,52 @@
+{ "frames": {
+   "Person 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 16, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 48 },
+    "sourceSize": { "w": 16, "h": 48 },
+    "duration": 100
+   },
+   "Person 1.ase": {
+    "frame": { "x": 16, "y": 0, "w": 16, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 48 },
+    "sourceSize": { "w": 16, "h": 48 },
+    "duration": 100
+   },
+   "Person 2.ase": {
+    "frame": { "x": 32, "y": 0, "w": 16, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 48 },
+    "sourceSize": { "w": 16, "h": 48 },
+    "duration": 100
+   },
+   "Person 3.ase": {
+    "frame": { "x": 48, "y": 0, "w": 16, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 48 },
+    "sourceSize": { "w": 16, "h": 48 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.1.4.1",
+  "image": "C:\\Users\\zelit\\Pictures\\Sprites\\Shapeshift\\Person.png",
+  "format": "RGBA8888",
+  "size": { "w": 64, "h": 48 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "WalkingDown", "from": 0, "to": 0, "direction": "forward" },
+   { "name": "WalkingRight", "from": 1, "to": 1, "direction": "forward" },
+   { "name": "WalkingUp", "from": 2, "to": 2, "direction": "forward" },
+   { "name": "WalkingLeft", "from": 3, "to": 3, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ]
+ }
+}

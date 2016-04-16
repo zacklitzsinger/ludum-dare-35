@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{525C9564-48C6-479D-A50B-24269A3ADA93}</ProjectGuid>
+    <ProjectGuid>{2727BDC6-5DFA-4013-9D2C-D2587617E59F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Shapeshift</RootNamespace>
-    <AssemblyName>Shapeshift</AssemblyName>
+    <RootNamespace>MonogameTest2</RootNamespace>
+    <AssemblyName>MonogameTest2</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -41,9 +41,8 @@
     <Compile Include="AnimationData.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="GameObjectManager.cs" />
-    <Compile Include="Input.cs" />
     <Compile Include="Physics.cs" />
+    <Compile Include="Input.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,13 +63,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\map.txt" />
+    <Content Include="Content\map.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\DudeWalking.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
