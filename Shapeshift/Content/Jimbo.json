@@ -41,8 +41,8 @@
   "scale": "1",
   "frameTags": [
    { "name": "WalkingDown", "from": 0, "to": 0, "direction": "forward" },
-   { "name": "walkingRight", "from": 1, "to": 1, "direction": "forward" },
-   { "name": "walkingUp", "from": 2, "to": 2, "direction": "forward" },
+   { "name": "WalkingRight", "from": 1, "to": 1, "direction": "forward" },
+   { "name": "WalkingUp", "from": 2, "to": 2, "direction": "forward" },
    { "name": "WalkingLeft", "from": 3, "to": 3, "direction": "forward" }
   ],
   "layers": [

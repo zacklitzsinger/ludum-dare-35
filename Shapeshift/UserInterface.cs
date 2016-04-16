@@ -32,7 +32,7 @@ namespace Shapeshift
         {
             var sb = Renderer.Instance.SpriteBatch;
             sb.Draw(pixel, area, Color.Black);
-            sb.Draw(pixel, new Rectangle(area.X + border, area.Y + border, area.Width - border, area.Height - border), Color.White);
+            sb.Draw(pixel, new Rectangle(area.X + border, area.Y + border, area.Width - border * 2, area.Height - border * 2), Color.White);
             Renderer.Instance.Text(text, new Vector2(area.Center.X, area.Center.Y));
         }
     }
