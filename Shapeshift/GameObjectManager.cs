@@ -5,6 +5,14 @@ namespace Shapeshift
 {
     abstract class GameObject
     {
+        protected Rectangle aabb;
+        public Rectangle AABB
+        {
+            get { return aabb;}
+
+            set { aabb = value; }
+        }
+
         public GameObject()
         {
         }
@@ -41,8 +49,22 @@ namespace Shapeshift
 
         public void Add(GameObject go)
         {
+            if (gameObjects.Contains(go))
+                return;
             gameObjects.Add(go);
             go.LoadContent();
+        }
+
+        public bool CheckCollision(Point pos, GameObject source)
+        {
+            foreach(var go in gameObjects)
+            {
+                if (go == source)
+                    continue;
+                if (go.AABB.Contains(pos))
+                    return true;
+            }
+            return false;
         }
 
         public void Update(GameTime gameTime)
@@ -51,9 +73,9 @@ namespace Shapeshift
                 go.Update(gameTime);
         }
 
-
         public void Draw()
         {
+            gameObjects.Sort((a, b) => { return a.AABB.Bottom.CompareTo(b.AABB.Bottom); });
             foreach (var go in gameObjects)
                 go.Draw();
         }

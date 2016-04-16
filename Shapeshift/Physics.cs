@@ -38,20 +38,22 @@ namespace Shapeshift
             }
         }
 
-        private bool GetCollision(Point p)
+        private bool GetCollision(Point p, GameObject source)
         {
             var tile = tilemap.GetTile(p);
-            if (tile == null) { return false; }
-            return tile.solid;
+            if (tile != null && tile.solid)
+                return true;
+            return GameObjectManager.Instance.CheckCollision(p, source);
         }
 
-        private bool GetCollision(int x, int y)
+        private bool GetCollision(int x, int y, GameObject source)
         {
-            return GetCollision(new Point(x, y));
+            return GetCollision(new Point(x, y), source);
         }
 
-        public CollisionData Move(Rectangle aabb, Point delta)
+        public CollisionData Move(GameObject go, Point delta)
         {
+            var aabb = go.AABB;
             var collisions = Direction.NONE;
 
             // FIXME This code is somewhat inefficient and only works for things <= 3 tiles wide/tall
@@ -60,9 +62,9 @@ namespace Shapeshift
                 int left = aabb.Left;
                 while (delta.X++ < 0)
                 {
-                    if (GetCollision(left - 1, aabb.Center.Y) ||
-                        GetCollision(left - 1, aabb.Top) ||
-                        GetCollision(left - 1, aabb.Bottom))
+                    if (GetCollision(left - 1, aabb.Center.Y, go) ||
+                        GetCollision(left - 1, aabb.Top, go) ||
+                        GetCollision(left - 1, aabb.Bottom, go))
                     {
                         collisions |= Direction.LEFT;
                         break;
@@ -76,9 +78,9 @@ namespace Shapeshift
                 int right = aabb.Right;
                 while (delta.X-- > 0)
                 {
-                    if (GetCollision(right + 1, aabb.Center.Y) ||
-                        GetCollision(right + 1, aabb.Top) ||
-                        GetCollision(right + 1, aabb.Bottom))
+                    if (GetCollision(right + 1, aabb.Center.Y, go) ||
+                        GetCollision(right + 1, aabb.Top, go) ||
+                        GetCollision(right + 1, aabb.Bottom, go))
                     {
                         collisions |= Direction.RIGHT;
                         break;
@@ -93,9 +95,9 @@ namespace Shapeshift
                 int top = aabb.Top;
                 while (delta.Y++ < 0)
                 {
-                    if (GetCollision(aabb.Center.X, top - 1) ||
-                        GetCollision(aabb.Left, top - 1) ||
-                        GetCollision(aabb.Right, top - 1))
+                    if (GetCollision(aabb.Center.X, top - 1, go) ||
+                        GetCollision(aabb.Left, top - 1, go) ||
+                        GetCollision(aabb.Right, top - 1, go))
                     {
                         collisions |= Direction.UP;
                         break;
@@ -109,9 +111,9 @@ namespace Shapeshift
                 int bottom = aabb.Bottom;
                 while (delta.Y-- > 0)
                 {
-                    if (GetCollision(aabb.Center.X, bottom + 1) ||
-                        GetCollision(aabb.Left, bottom + 1) ||
-                        GetCollision(aabb.Right, bottom + 1))
+                    if (GetCollision(aabb.Center.X, bottom + 1, go) ||
+                        GetCollision(aabb.Left, bottom + 1, go) ||
+                        GetCollision(aabb.Right, bottom + 1, go))
                     {
                         collisions |= Direction.DOWN;
                         break;

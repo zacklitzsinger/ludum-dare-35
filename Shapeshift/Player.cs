@@ -5,7 +5,6 @@ namespace Shapeshift
     class Player : GameObject
     {
         Sprite sprite = new Sprite("Person", 16, 48);
-        Rectangle aabb = new Rectangle(0, 0, 16, 16);
         Point delta;
         int acceleration = 1;
         int maxXSpeed = 4;
@@ -14,6 +13,7 @@ namespace Shapeshift
 
         public Player() : base()
         {
+            this.aabb = new Rectangle(0, 0, 16, 16);
         }
 
         public override void LoadContent()
@@ -70,7 +70,7 @@ namespace Shapeshift
             delta.Y = MathHelper.Clamp(delta.Y, -maxYSpeed, maxYSpeed);
 
             // Physics
-            var cd = Physics.Instance.Move(aabb, delta);
+            var cd = Physics.Instance.Move(this, delta);
             aabb = cd.newPosition;
             if ((Direction.LEFT & cd.collisions) == Direction.LEFT)
                 delta.X = MathHelper.Max(0, delta.X);
